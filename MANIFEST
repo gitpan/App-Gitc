@@ -7,7 +7,7 @@ META.json
 META.yml
 Makefile.PL
 README
-README.md
+README.html
 bin/git-merge-theirs
 bin/gitc
 bin/gitc-add-user
@@ -47,7 +47,7 @@ dist.ini
 examples/eventum-gitc.config
 examples/jira-gitc.config
 gitc.config
-lib/App/Gitc.pm
+lib/App/Gitc.pod
 lib/App/Gitc/Its/Eventum.pm
 lib/App/Gitc/Its/Github.pm
 lib/App/Gitc/Its/Jira.pm
@@ -60,8 +60,8 @@ lib/App/Gitc/Util.pm
 perlcritic.rc
 sql/changeset_log.sql
 sql/tag_archive.sql
-t/author-critic.t
-t/release-pod-coverage.t
+t/00-check-deps.t
+t/00-report-prereqs.t
 t/release-pod-syntax.t
 t/reversible.t
 t/sort_changeset_ids_by_name.t

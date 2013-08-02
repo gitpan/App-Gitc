@@ -1,9 +1,9 @@
 package App::Gitc::Util;
-{
-  $App::Gitc::Util::VERSION = '0.58';
-}
 use strict;
 use warnings;
+
+# ABSTRACT: The workhorse of gitc
+our $VERSION = '0.60'; # VERSION
 
 use base qw( Exporter );
 use YAML::Syck;
@@ -1092,6 +1092,7 @@ sub project_name {
     our $project_name;
     return $project_name if defined $project_name;
     my ($line) = git "show HEAD:.gitc";
+    die "You need to specify a project name in a .gitc file. See the HOWTO for more details." unless $line;
     my ($name) = $line =~ m/^\s*name\s*:\s*(.*)$/;
     return $project_name = $name;
 }
@@ -1477,11 +1478,11 @@ __END__
 
 =head1 NAME
 
-App::Gitc::Util
+App::Gitc::Util - The workhorse of gitc
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
 =head1 Exported Subroutines
 
@@ -1494,7 +1495,7 @@ Displays C<$message> and waits for the user to press 'y' or 'n'.  If he enters
 
 Returns the name of the branch that's currently checked out in Git.
 
-=head its_config
+=head2 its_config
 
 Returns the config specific to this project's ITS.
 
@@ -1905,28 +1906,7 @@ NOTE: Block list must be an arraref in the project configuration
 
 =head1 AUTHOR
 
-Grant Street Group <F<developers@grantstreet.com>>
-
-=head1 COPYRIGHT AND LICENSE
-
-    Copyright 2012 Grant Street Group, All Rights Reserved.
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-=head1 AUTHOR
-
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

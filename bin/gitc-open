@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# PODNAME: gitc-open
 
 use strict;
 use warnings;
@@ -18,6 +17,10 @@ use warnings;
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# PODNAME: gitc-open
+# ABSTRACT: Open a new changeset
+our $VERSION = '0.60'; # VERSION
 
 use App::Gitc::Util qw(
     changeset_group
@@ -48,6 +51,8 @@ my $onto;
 GetOptions( 'onto=s' => \$onto );
 
 my $changeset_name = shift or die "You must specify a changeset name\n";
+
+exec 'gitc-quickfix', if $changeset_name eq 'quickfix';
 
 die "You may not create a changeset named '$changeset_name'\n"
     if $changeset_name =~ m/^(master|test|stage|prod)$/;
@@ -165,15 +170,15 @@ __END__
 
 =head1 NAME
 
-gitc-open
+gitc-open - Open a new changeset
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
 =head1 AUTHOR
 
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

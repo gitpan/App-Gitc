@@ -1,11 +1,10 @@
 package App::Gitc::Its::Jira;
-{
-  $App::Gitc::Its::Jira::VERSION = '0.58';
-}
-
-
 use strict;
 use warnings;
+
+# ABSTRACT: Support for Atlassian JIRA ITS (Issue Tracking System)
+our $VERSION = '0.60'; # VERSION
+
 
 use JIRA::Client;
 use JIRA::Client::REST;
@@ -261,7 +260,6 @@ sub issue_scheduled_release {
     return $issue->{fixVersions}->[-1]->{name}; #.' ('.$issue->{fixVersions}->[-1]->{releaseDate}.')';
 }
 
-
 1;
 
 __END__
@@ -270,27 +268,19 @@ __END__
 
 =head1 NAME
 
-App::Gitc::Its::Jira
+App::Gitc::Its::Jira - Support for Atlassian JIRA ITS (Issue Tracking System)
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
-=head1 NAME
-
-App::Gitc::Its::Jira;
-
-=head1 Synopsis
-
-Support for Atlassian JIRA ITS (Issue Tracking System)
+=head1 DESCRIPTION
 
 Uses a mix of both SOAP and REST APIs.
 
 Eventually this should be migrated to fully use the REST API once it is mature.
 
-=head1 Description
-
-=head1 Methods
+=head1 METHODS
 
 =head2 label_service label_issue
 
@@ -346,28 +336,7 @@ Returns the JIRA issue number for a given changeset name OR given an JIRA issue 
 
 =head1 AUTHOR
 
-Grant Street Group <F<developers@grantstreet.com>>
-
-=head1 COPYRIGHT AND LICENSE
-
-    Copyright 2012 Grant Street Group, All Rights Reserved.
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-=head1 AUTHOR
-
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

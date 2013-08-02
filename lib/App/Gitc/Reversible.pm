@@ -1,7 +1,4 @@
 package App::Gitc::Reversible;
-{
-  $App::Gitc::Reversible::VERSION = '0.58';
-}
 use strict;
 use warnings;
 use base 'Exporter';
@@ -13,6 +10,9 @@ BEGIN {
         reversibly
     );
 };
+
+# ABSTRACT: Simple reversible computation for gitc
+our $VERSION = '0.60'; # VERSION
 
 
 sub failure_warning {
@@ -60,17 +60,13 @@ __END__
 
 =head1 NAME
 
-App::Gitc::Reversible
+App::Gitc::Reversible - Simple reversible computation for gitc
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
-=head1 NAME
-
-App::Gitc::Reversible - simple reversible computation
-
-=head1 Synopsis
+=head1 SYNOPSIS
 
     use App::Gitc::Reversible;
     reversibly {
@@ -85,7 +81,7 @@ App::Gitc::Reversible - simple reversible computation
         operation_that_might_get_SIGINTed($fh);
     });
 
-=head1 Description
+=head1 DESCRIPTION
 
 Perform computations and automatically reverse their side effects if the
 computations fail.  One often wants to perform a series of operations, some of
@@ -93,7 +89,7 @@ which have side effects, and properly "undo" all side effects if something
 goes wrong with one of the operations.  By invoking your code L</reversibly>,
 the undos are handled for you.
 
-=head1 Subroutines
+=head1 SUBROUTINES
 
 =head2 failure_warning($message)
 
@@ -135,34 +131,13 @@ exception "SIGINT\n" is thrown.
 
 Nested calls to C<reversibly> are handled correctly.
 
-=head1 See Also
+=head1 SEE ALSO
 
 L<Data::Transaactional>, L<Object::Transaction>.
 
 =head1 AUTHOR
 
-Grant Street Group <F<developers@grantstreet.com>>
-
-=head1 COPYRIGHT AND LICENSE
-
-    Copyright 2012 Grant Street Group, All Rights Reserved.
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-=head1 AUTHOR
-
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

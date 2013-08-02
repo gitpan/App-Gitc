@@ -1,10 +1,10 @@
 package App::Gitc::UserLookup;
-{
-  $App::Gitc::UserLookup::VERSION = '0.58';
-}
 
 use strict;
 use warnings;
+
+# ABSTRACT: App::Gitc::Util helper
+our $VERSION = '0.60'; # VERSION
 
 use App::Gitc::Util qw( git );
 
@@ -19,15 +19,15 @@ __END__
 
 =head1 NAME
 
-App::Gitc::UserLookup
+App::Gitc::UserLookup - App::Gitc::Util helper
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
 =head1 AUTHOR
 
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

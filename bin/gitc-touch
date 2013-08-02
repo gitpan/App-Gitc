@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# PODNAME: gitc-touch
 
 use strict;
 use warnings;
@@ -19,6 +18,10 @@ use warnings;
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# PODNAME: gitc-touch
+# ABSTRACT: Touch a changeset
+our $VERSION = '0.60'; # VERSION
+
 use App::Gitc::Util qw( meta_data_add parse_changeset_spec );
 
 my $changeset_spec = shift;
@@ -36,15 +39,15 @@ __END__
 
 =head1 NAME
 
-gitc-touch
+gitc-touch - Touch a changeset
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
 =head1 AUTHOR
 
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

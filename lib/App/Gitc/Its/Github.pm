@@ -1,10 +1,9 @@
 package App::Gitc::Its::Github;
-{
-  $App::Gitc::Its::Github::VERSION = '0.58';
-}
-
 use strict;
 use warnings;
+
+# ABSTRACT: Support for Github Issue Tracking
+our $VERSION = '0.60'; # VERSION
 
 
 use YAML::Syck;
@@ -212,27 +211,19 @@ __END__
 
 =head1 NAME
 
-App::Gitc::Its::Github
+App::Gitc::Its::Github - Support for Github Issue Tracking
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
-=head1 NAME
+=head1 DESCRIPTION
 
-App::Gitc::Its::Github;
-
-=head1 Synopsis
-
-Support for Github Issue Tracking
-
-=head1 Description
-
-=head1 Methods
+=head1 METHODS
 
 =head1 AUTHOR
 
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,24 +1,9 @@
 package App::Gitc::Test;
-{
-  $App::Gitc::Test::VERSION = '0.58';
-}
 use strict;
 use warnings;
 
-#    Copyright 2012 Grant Street Group, All Rights Reserved.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# ABSTRACT: Test class for gitc
+our $VERSION = '0.60'; # VERSION
 
 use Test::More '';
 use App::Gitc::Util qw( branch_point unpromoted );
@@ -48,15 +33,15 @@ __END__
 
 =head1 NAME
 
-App::Gitc::Test
+App::Gitc::Test - Test class for gitc
 
 =head1 VERSION
 
-version 0.58
+version 0.60
 
 =head1 AUTHOR
 
-Grant Street Group
+Grant Street Group <developers@grantstreet.com>
 
 =head1 COPYRIGHT AND LICENSE
 
